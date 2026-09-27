@@ -1,0 +1,21 @@
+{
+  "configurations": [
+    "simple",
+    "context",
+    "full"
+  ],
+  "dataset": "benchmark/tasks.json",
+  "dataset_schema_version": 1,
+  "environment": {
+    "docker_available": false,
+    "model": null,
+    "provider": null
+  },
+  "note": "No benchmark outcome metrics were generated.",
+  "reason": "Docker executable not found; ADEV_EVAL_PROVIDER is not set",
+  "results": [],
+  "schema_version": 1,
+  "started_at": "2026-09-27T15:56:27.887416+00:00",
+  "status": "not_run",
+  "tasks_attempted": 0
+}

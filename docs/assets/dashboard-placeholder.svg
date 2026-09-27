@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">AutonomousDev dashboard screenshot placeholder</title>
+  <desc id="desc">Instructions to replace this placeholder with a real dashboard capture.</desc>
+  <rect width="1200" height="520" fill="#090d0b"/>
+  <rect x="36" y="34" width="1128" height="452" rx="4" fill="#111814" stroke="#29362f"/>
+  <text x="80" y="120" fill="#b8f54a" font-family="monospace" font-size="16" letter-spacing="3">AUTONOMOUSDEV / ASSET PLACEHOLDER</text>
+  <text x="80" y="195" fill="#edf4f0" font-family="system-ui,sans-serif" font-size="38" font-weight="600">Capture evidence, not a mockup.</text>
+  <text x="80" y="245" fill="#84948d" font-family="system-ui,sans-serif" font-size="19">Run the stack, complete a real task, then replace this SVG with the screenshot.</text>
+  <rect x="80" y="312" width="1040" height="72" fill="#0b100d" stroke="#34463b"/>
+  <text x="106" y="355" fill="#6dc8ff" font-family="monospace" font-size="16">docs/DEMO.md → recording and screenshot checklist</text>
+</svg>

@@ -1,0 +1,10 @@
+{
+  "include": ["src", "tests", "benchmark"],
+  "extraPaths": ["src", "."],
+  "pythonVersion": "3.11",
+  "typeCheckingMode": "basic",
+  "reportMissingImports": "none",
+  "reportMissingModuleSource": "none",
+  "reportUnusedImport": "error",
+  "reportUnusedVariable": "error"
+}

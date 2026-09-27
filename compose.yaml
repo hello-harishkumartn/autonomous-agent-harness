@@ -1,0 +1,46 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: autonomousdev
+      POSTGRES_USER: autonomousdev
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-local-development-only}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U autonomousdev"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  api:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://autonomousdev:${POSTGRES_PASSWORD:-local-development-only}@postgres:5432/autonomousdev
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      ADEV_REPOSITORY_ROOT: /repositories
+      ADEV_CONTAINER_REPOSITORY_ROOT: /repositories
+      ADEV_HOST_REPOSITORY_ROOT: ${ADEV_REPOSITORY_ROOT:?Set ADEV_REPOSITORY_ROOT to an absolute host path}
+    volumes:
+      - ${ADEV_REPOSITORY_ROOT}:/repositories
+      - /var/run/docker.sock:/var/run/docker.sock
+    group_add:
+      - ${DOCKER_GID:-0}
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  web:
+    build:
+      context: web
+      args:
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:8000}
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+
+volumes:
+  postgres-data:

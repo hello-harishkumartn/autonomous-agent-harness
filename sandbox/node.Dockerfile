@@ -1,0 +1,3 @@
+FROM node:22-alpine
+USER 65534:65534
+WORKDIR /workspace
